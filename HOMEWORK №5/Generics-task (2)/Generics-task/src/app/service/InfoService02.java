@@ -17,16 +17,17 @@ public class InfoService02 {
 
     private Client<String, Double> getInputs() {
         scanner = new Scanner(System.in);
-        System.out.print("Enter client's phone: ");
+        System.out.print("Введіть телефон клієнта: ");
         phone = scanner.nextLine();
-        System.out.print("Enter client's purchase amount: ");
+        System.out.print("Введіть суму покупки клієнта: ");
         purchaseAmount = scanner.nextDouble();
+        scanner.nextLine();
         return new Client<>(phone, purchaseAmount);
     }
 
     private String formData(Client<String, Double> client) {
-        String amountRounded = Rounder.roundValue(client.getValue());
-        return "Client's phone is " + client.getKey() +
-                ", purchase amount is USD " + amountRounded;
+        double roundedValue = Double.parseDouble(Rounder.roundValue(client.getValue()));
+        return "Телефон клієнта: " + client.getKey() +
+                ", сума покупки: USD " + roundedValue;
     }
 }
