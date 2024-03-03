@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DataProvider {
-
     public List<Product> getData() {
         List<Product> list = new ArrayList<>();
         list.add(new Product("apple", 1.29));

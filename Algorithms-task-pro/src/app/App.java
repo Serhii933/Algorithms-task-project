@@ -20,7 +20,6 @@ public class App {
         int index = service.search(list, priceSearch);
         getOutput(list, priceSearch, index);
     }
-
     private static double getSearchValue() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter price value to search (x.xx): ");
